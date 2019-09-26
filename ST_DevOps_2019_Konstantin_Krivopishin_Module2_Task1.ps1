@@ -47,8 +47,6 @@ Get-HotFix
 Get-Host | Select-Object CurrentUICulture
 #или
 Get-UICulture -InformationVariable "language"
-#или 
-Get-WinUserLanguageList -InformationVariable "current"
 
 #15.	Получите текущее время и дату
 Get-Date
