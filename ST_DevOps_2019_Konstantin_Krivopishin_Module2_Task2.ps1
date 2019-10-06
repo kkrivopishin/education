@@ -31,10 +31,7 @@ Get-Process | ForEach-Object {
 
 #8.	Подсчитать размер занимаемый файлами в папке C:\windows (и во всех подпапках) за исключением файлов *.tmp
 $Count = 0
-Get-ChildItem -Path C:\Windows\ -Recurse -File -Exclude *.tmp | ForEach-Object 
-{
-   $Count+=$_.Length
-}
+Get-ChildItem -Path C:\Windows\ -Recurse -File -Exclude *.tmp | ForEach-Object {$Count+=$_.Length}
 $Count
 #9.	Сохранить в CSV-файле информацию о записях одной ветви реестра HKLM:\SOFTWARE\Microsoft.
 Get-ChildItem  -Path  HKLM:\SOFTWARE\Microsoft  -Recurse | Export-Csv -Path f:\Work\HKLM.csv
