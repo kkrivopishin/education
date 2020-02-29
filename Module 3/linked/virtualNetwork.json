@@ -1,0 +1,29 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "virtualNetworkSettings": {
+            "type": "object"
+        }
+    },
+    "variables": {
+    },
+    "functions": [
+    ],
+    "resources": [
+        {
+            "name": "[parameters('virtualNetworkSettings').name]",
+            "type": "Microsoft.Network/virtualNetworks",
+            "apiVersion": "2019-11-01",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "addressSpace": {
+                    "addressPrefixes": "[parameters('virtualNetworkSettings').addressPrefixes]"
+                },
+                "subnets": "[parameters('virtualNetworkSettings').subnets]"
+            }
+        }
+    ],
+    "outputs": {
+    }
+}
