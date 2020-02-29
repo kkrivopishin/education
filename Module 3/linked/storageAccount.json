@@ -29,7 +29,7 @@
     "outputs": {
         "storageAccountName": {
             "type": "string",
-            "value": "[string(reference(resourceId('Microsoft.Storage/storageAccounts', variables('storageName'))))]"
+            "value": "[variables('storageName')]"
         }
     }
 }
