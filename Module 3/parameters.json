@@ -13,7 +13,7 @@
                         "name": "front-end-subnet",
                         "properties": {
                             "addressPrefix": "10.1.2.0/26"
-                        }                        
+                        }
                     },
                     {
                         "name": "back-end-subnet",
@@ -23,6 +23,12 @@
                     }
                 ]
             }
+        },
+        "kind": {
+            "value": "StorageV2"
+        },
+        "SKU": {
+            "value": "Standard_LRS"
         }
     }
 }
