@@ -1,7 +1,17 @@
 {
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
-    "parameters": {},
+    "parameters": {
+        "virtualNetworkSettings": {
+            "type": "object"
+        }
+        ,"kind": {
+            "type": "string"
+        },
+        "SKU": {
+            "type": "string"
+        }
+    },
     "variables": {
     },
     "resources": [
@@ -15,9 +25,10 @@
                     "uri": "[uri(deployment().properties.templateLink.uri, 'linked/virtualNetwork.json')]",
                     "contentVersion": "1.0.0.0"
                 },
-                "parametersLink": { 
-                    "uri": "[uri(deployment().properties.templateLink.uri, 'parameters.json')]",
-                    "contentVersion": "1.0.0.0"
+                "parameters": {
+                    "virtualNetworkSettings": {
+                        "value": "[parameters('virtualNetworkSettings')]"
+                    }
                 }
             }
         },
@@ -31,9 +42,13 @@
                     "uri": "[uri(deployment().properties.templateLink.uri, 'linked/storageAccount.json')]",
                     "contentVersion": "1.0.0.0"
                 },
-                "parametersLink": { 
-                    "uri": "[uri(deployment().properties.templateLink.uri, 'parameters.json')]",
-                    "contentVersion": "1.0.0.0"
+                "parameters": {
+                    "kind": {
+                        "value": "[parameters('kind')]"
+                    },
+                    "SKU": {
+                        "value": "[parameters('SKU')]"
+                    }
                 }
             }
         }

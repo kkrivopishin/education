@@ -2,9 +2,6 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "virtualNetworkSettings": {
-            "type": "object"
-        },
         "kind": {
             "type": "string"
         },
@@ -32,7 +29,7 @@
     "outputs": {
         "storageAccountName": {
             "type": "string",
-            "value": "[reference(resourceId('Microsoft.Storage/storageAccounts', variables('storageName'))).name]"
+            "value": "[reference(resourceId('Microsoft.Storage/storageAccounts', variables('storageName')))]"
         }
     }
 }
