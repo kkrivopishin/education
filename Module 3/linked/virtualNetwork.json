@@ -6,10 +6,6 @@
             "type": "object"
         }
     },
-    "variables": {
-    },
-    "functions": [
-    ],
     "resources": [
         {
             "name": "[parameters('virtualNetworkSettings').name]",

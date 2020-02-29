@@ -4,15 +4,13 @@
     "parameters": {
         "virtualNetworkSettings": {
             "type": "object"
-        }
-        ,"kind": {
+        },
+        "kind": {
             "type": "string"
         },
         "SKU": {
             "type": "string"
         }
-    },
-    "variables": {
     },
     "resources": [
         {

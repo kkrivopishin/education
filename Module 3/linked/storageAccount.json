@@ -12,8 +12,6 @@
     "variables": {
         "storageName": "[concat('storage', uniqueString(resourceGroup().id))]"
     },
-    "functions": [
-    ],
     "resources": [
         {
             "name": "[variables('storageName')]",
